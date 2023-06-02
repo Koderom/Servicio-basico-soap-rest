@@ -1,14 +1,13 @@
 package com.examplesoap.ws;
 
 import java.util.HashMap;
-
 import javax.jws.WebService;
-
 import models.User;
+//import org.apache.cxf.interceptor.InInterceptors;
 
 
 @WebService(endpointInterface="com.examplesoap.ws.Example")
-
+@InInterceptors(classes = WSSecurityInterceptor.class)
 
 public class ExampleImpl implements Example{
 	HashMap<Integer, User> usuarios;
